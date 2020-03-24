@@ -85,5 +85,4 @@ axios.patch(`https://ih-crud-api.herokuapp.com/characters/${theId}`, updatedchar
 
 document.getElementById("add-char").onclick = event => document.getElementById("character-form").style.display = "block"
 
-
 document.getElementById("update-char").onclick = event => document.getElementById("update-form").style.display = "block"

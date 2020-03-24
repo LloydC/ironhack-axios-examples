@@ -6,6 +6,10 @@
   </head>
 
   <body>
+    <ul id="characters-list">
+
+    </ul>
+    <!-- CREATE A CHARACTER FORM -->
     <form action="#" method="post" id="character-form">
       <h3 id="create-char">Create a character</h3>
         <div>
@@ -20,15 +24,18 @@
           <label for="the-weapon-input"> Weapon: </label>
           <input type="text" name="weapon" class="the-weapon" id="the-weapon-input" />
         </div>
-        <button>Save</button>
+        <button id="add-char">Save</button>
     </form>
-    <p>Which character you would like to update? Input its id:</p>
+
+    <p>Which character would you like to update? Input its id:</p>
+<!-- RETRIEVE A CHARACTER FORM -->
 <form action="#" method="GET" id="get-form">
   <h3 id="get-char">Retrieve a character</h3>
   <label for="the-char-id"></label>
   <input type="text" name="the-char" id="the-char-id" />
   <button type="submit" id="getButton">Get the character</button>
 </form>
+<!-- UPDATE CHARACTER FORM -->
 <div id="update-section">
   <h3 id="update-char">Update a character</h3>
   <form method="POST" action="#" id="update-form">

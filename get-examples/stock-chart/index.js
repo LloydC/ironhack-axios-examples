@@ -5,6 +5,7 @@ const apiUrl = `https://www.alphavantage.co/query?function=${functionName}&symbo
 
 axios.get(apiUrl)
   .then(responseFromAPI => {
+    console.log(responseFromAPI.data)
     printTheChart(responseFromAPI.data); // <== call the function here where you used to console.log() the response
   })
   .catch(err => console.log("Error while getting the data: ", err));
@@ -14,7 +15,8 @@ function printTheChart(stockData) {
 
   const stockDates = Object.keys(dailyData);
   const stockPrices = stockDates.map( date => dailyData[date]["4. close"] );
-
+  console.log(stockDates)
+  console.log(stockPrices)
   const ctx = document.getElementById("myChart").getContext("2d");
   const chart = new Chart(ctx, {
     type: "line",
