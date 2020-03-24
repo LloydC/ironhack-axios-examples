@@ -1,23 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Chart Page</title>
-</head>
-<body>
-    <canvas id="myChart"></canvas>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="text/javascript">
-    
-    const key = "demo";
-    const functionName = "TIME_SERIES_DAILY";
-    const symbolName = "MSFT";
-    const apiUrl = `https://www.alphavantage.co/query?function=${functionName}&symbol=${symbolName}&apikey=${key}`;
+const key = "demo";
+const functionName = "TIME_SERIES_DAILY";
+const symbolName = "MSFT";
+const apiUrl = `https://www.alphavantage.co/query?function=${functionName}&symbol=${symbolName}&apikey=${key}`;
 
-       axios
-  .get(apiUrl)
+axios.get(apiUrl)
   .then(responseFromAPI => {
     printTheChart(responseFromAPI.data); // <== call the function here where you used to console.log() the response
   })
@@ -43,8 +29,5 @@ function printTheChart(stockData) {
         }
       ]
     }
-  }); // closes chart = new Chart()
-} // closes printTheChart()
-    </script>
-</body>
-</html>
+  });
+} 

@@ -1,30 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Rest Countries API</title>
-  </head>
-  <body>
-    <h1>Countries Info</h1>
-    <!-- use input's id to grab the value from the input field -->
-    <label for="theInput"></label>
-    <input id="theInput" type="text" onkeyup="checkInput()">
-    <button id="theButton">Get the country</button>
-
-    <!-- the data we get from the API will be populated in here: -->
-    <h2 id="countryName"></h2>
-    <img id="countryFlag"/>
-    <p id="countryCapital"></p>
- 
-
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="text/javascript">
-        let errDiv;
+let errDiv;
 
 const restCountriesApi = axios.create({
-  baseURL: "https://restcountries.eu/rest/v2/name/"
+      baseURL: "https://restcountries.eu/rest/v2/name/"
 });
 
 function getCountryInfo(theName) {
@@ -89,6 +66,3 @@ function checkInput() {
     const country = document.getElementById("theInput").value;
     getCountryInfo(country);
     };
-    </script>
-  </body>
-</html>
